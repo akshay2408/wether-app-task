@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
+import Header from "./Weather/Header/header";
+import Main from "./Weather/Main/main";
 
 import axios from "axios";
 
@@ -37,7 +37,6 @@ export default function Wether() {
         .catch((error) => {
           catchError(error);
           setLoader(null);
-          setCoordinates(undefined);
           setContentState("warning");
           setTimeout(() => {
             if (contentState === "warning" || contentState === "blank")
